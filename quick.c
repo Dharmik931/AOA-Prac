@@ -1,69 +1,43 @@
-#include <stdio.h>
-
-
-
-int qsort(int a[20], int lb, int ub)
+#include<stdio.h>
+void Quick_sort(int a[20],int First,int Last)
 {
-    if (lb < ub)
+    int i,j,pivot,temp=0;
+    if(First<Last)
     {
-        int pivot = a[lb];
-        int start = lb;
-        int end = ub;
-        while (start < end)
-        {
-            while (a[start] <= pivot)
-            {
-                start++;
-            }
-            while (a[end] > pivot)
-            {
-                end--;
-            }
-
-            if (start < end)
-            {
-                int temp;
-                temp = a[start];
-                a[start] = a[end];
-                a[end] = temp;
-            }
-        }
-        int temp;
-        temp = a[pivot];
-        a[pivot] = a[end];
-        a[end] = temp;
-
-        qsort(a, lb, end - 1);
-        qsort(a, end + 1, ub);
+     pivot=First;
+     i=First;
+     j=Last;
+     while(i<j){
+     while(a[i]<=a[pivot] && i<Last)
+     i++;
+     while(a[j]>a[pivot])
+     j--;
+     if(i<j)
+     {
+        temp=a[i];
+        a[i]=a[j];
+        a[j]=temp;
+     }
+     }
+    
+    temp=a[pivot];
+    a[pivot]=a[j];
+    a[j]=temp;
+    Quick_sort(a,First,j-1);
+    Quick_sort(a,j+1,Last);
     }
 }
-
-// void qsort(int a[], int lb, int ub)
-// {
-//     if(lb<ub)
-//     {
-//         int loc = partition(a, lb, ub);
-//         qsort(a, lb, loc-1);
-//         qsort(a, loc+1, ub);
-//     }
-// }
-
 void main()
 {
-    int i, j, n, a[10], min, temp;
-    printf("Enter no. of elements: ");
-    scanf("%d", &n);
-    printf("Enter array of elements: ");
-    for (i = 0; i < n; i++)
-    {
-        scanf("%d", &a[i]);
-    }
+    int i,n,a[20];
+    printf("Enter the element:");
+    scanf("%d",&n);
+    printf("Enter the Elements\n");
+    for(i=0;i<n;i++)
+    scanf("%d",&a[i]);
+    Quick_sort(a,0,n-1);
+     printf("Result\n");
+    for(i=0;i<n;i++)
+    printf("%d\t",a[i]);
 
-    qsort(a, 0, n - 1);
-
-    printf("Sorted elements: ");
-    for (i = 0; i < n; i++)
-    {
-        printf("%d ", a[i]);
-    }
 }
