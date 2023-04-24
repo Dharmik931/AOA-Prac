@@ -41,3 +41,12 @@ void main()
     printf("%d\t",a[i]);
 
 }
+
+
+
+
+
+
+
+
+//BC - O(n log n) WC - o(n^2)
