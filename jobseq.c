@@ -81,3 +81,6 @@ void main()
   	 }
   	 printf("Total profit:%d\n",totalP);
 }
+
+
+//Compelex O(mn), if m=n then o(n^2)
