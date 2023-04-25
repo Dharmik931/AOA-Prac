@@ -48,3 +48,7 @@ void main()
     int q = 7;
     rabinKarp(pattern, text, q);
 }
+
+
+
+//BC m+n WC mn
