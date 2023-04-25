@@ -67,3 +67,6 @@ int main() {
     kmp_search(pat, txt);
     return 0;
 }
+
+
+//n
