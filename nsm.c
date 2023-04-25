@@ -20,3 +20,9 @@ void main()
             printf("Pattern found at position %d",i+1);
     }
 }
+
+
+
+
+
+//O(m(m-n+1))
