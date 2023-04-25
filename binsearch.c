@@ -35,3 +35,7 @@ void main()
 
     binsearch(a, 0, n - 1, s);
 }
+
+
+
+//BC o(1) baaki 0(logn)
